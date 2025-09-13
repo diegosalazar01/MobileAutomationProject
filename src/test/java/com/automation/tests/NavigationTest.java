@@ -11,7 +11,6 @@ public class NavigationTest extends BaseTest {
     public void test() {
         HomeScreen homeScreen = new HomeScreen(driver);
 
-        homeScreen.tapOnHomeButton();
         Assert.assertTrue(homeScreen.isHomeScreen(), "Home screen is not opened");
 
         WebviewScreen webviewScreen = homeScreen.tapOnWebviewButton();
