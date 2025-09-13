@@ -12,6 +12,9 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login / Sign up Form\")")
     WebElement lblLoginTitle;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Sign up\")")
+    WebElement btnSignUp;
+
     public LoginScreen(AppiumDriver driver) {
         super(driver);
     }
@@ -20,5 +23,9 @@ public class LoginScreen extends BaseScreen {
         return lblLoginTitle.isDisplayed();
     }
 
+    public SignUpScreen tapOnSignUpButton() {
+        btnSignUp.click();
+        return new SignUpScreen(driver);
+    }
 
 }
