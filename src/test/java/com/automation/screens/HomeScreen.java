@@ -14,19 +14,19 @@ public class HomeScreen extends BaseScreen {
     WebElement lblHomeTitle;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Webview\")")
-    WebElement btnWebview;
+    WebElement btnWebviewScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login\")")
-    WebElement btnLogin;
+    WebElement btnLoginScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Forms\")")
-    WebElement btnForms;
+    WebElement btnFormsScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Swipe\")")
-    WebElement btnSwipe;
+    WebElement btnSwipeScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Drag\")")
-    WebElement btnDrag;
+    WebElement btnDragScreen;
 
 
     public HomeScreen(AppiumDriver driver) {
@@ -38,27 +38,27 @@ public class HomeScreen extends BaseScreen {
     }
 
     public WebviewScreen tapOnWebviewButton() {
-        click(btnWebview);
+        click(btnWebviewScreen);
         return new WebviewScreen(driver);
     }
 
     public LoginScreen tapOnLoginButton() {
-        click(btnLogin);
+        click(btnLoginScreen);
         return new LoginScreen(driver);
     }
 
     public FormsScreen tapOnFormsButton() {
-        click(btnForms);
+        click(btnFormsScreen);
         return new FormsScreen(driver);
     }
 
     public  SwipeScreen tapOnSwipeButton() {
-        click(btnSwipe);
+        click(btnSwipeScreen);
         return new SwipeScreen(driver);
     }
 
     public  DragScreen tapOnDragButton() {
-        click(btnDrag);
+        click(btnDragScreen);
         return new DragScreen(driver);
     }
 
