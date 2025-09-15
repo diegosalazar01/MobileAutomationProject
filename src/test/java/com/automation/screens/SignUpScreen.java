@@ -1,6 +1,7 @@
 package com.automation.screens;
 
 import com.automation.utils.BaseScreen;
+import com.automation.utils.TestData;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -51,6 +52,14 @@ public class SignUpScreen extends BaseScreen {
 
     public void tapOnSignUpButton() {
         click(btnSignUp);
+    }
+
+    public void fillSignUpForm() {
+        TestData.generateSignUpData();
+        enterSignUpEmail(TestData.getGeneratedEmail());
+        enterSignUpPassword(TestData.getGeneratedPassword());
+        enterSignUpConfirmPassword(TestData.getGeneratedPassword());
+        tapOnSignUpButton();
     }
 
     public boolean isSignedUpMessageDisplayed() {

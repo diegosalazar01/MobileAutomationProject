@@ -20,10 +20,7 @@ public class SignUpTest extends BaseTest {
         SignUpScreen signUpScreen = loginScreen.tapOnSignUpButton();
         signUpScreen.isSignUpScreen();
 
-        signUpScreen.enterSignUpEmail("Diego2@gmail.com");
-        signUpScreen.enterSignUpPassword("Diego1223");
-        signUpScreen.enterSignUpConfirmPassword("Diego1223");
-        signUpScreen.tapOnSignUpButton();
+        signUpScreen.fillSignUpForm();
         Assert.assertTrue(signUpScreen.isSignedUpMessageDisplayed(), "Sign Up Message Not Displayed");
     }
 }
