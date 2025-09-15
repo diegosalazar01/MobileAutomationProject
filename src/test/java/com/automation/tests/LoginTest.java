@@ -15,9 +15,7 @@ public class LoginTest extends BaseTest {
         LoginScreen loginScreen = homeScreen.tapOnLoginButton();
         Assert.assertTrue(loginScreen.isLoginScreen(), "Login Screen Not Displayed");
 
-        loginScreen.enterLoginEmail("Diego2@gmail.com");
-        loginScreen.enterLoginPassword("Diego1223");
-        loginScreen.tapOnLoginButton();
+        loginScreen.fillLoginForm();
         Assert.assertTrue(loginScreen.isLoggedInMessageDisplayed(), "Login Message Not Displayed");
     }
 }

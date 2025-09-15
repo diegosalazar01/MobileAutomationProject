@@ -1,6 +1,7 @@
 package com.automation.screens;
 
 import com.automation.utils.BaseScreen;
+import com.automation.utils.TestData;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -55,6 +56,12 @@ public class LoginScreen extends BaseScreen {
 
     public void tapOnLoginButton() {
         click(btnLogin);
+    }
+
+    public void fillLoginForm() {
+        enterLoginEmail(TestData.getGeneratedEmail());
+        enterLoginPassword(TestData.getGeneratedPassword());
+        tapOnLoginButton();
     }
 
     public boolean isLoggedInMessageDisplayed() {
