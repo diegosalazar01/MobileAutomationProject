@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class WebviewScreen extends BaseScreen {
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"WebdriverIO\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Next-gen browser and mobile automation test framework for Node.js\")")
     WebElement lblWebviewTitle;
 
     public WebviewScreen(AppiumDriver driver) {
@@ -21,6 +21,7 @@ public class WebviewScreen extends BaseScreen {
     public boolean isWebviewScreen() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement element = wait.until(ExpectedConditions.visibilityOf(lblWebviewTitle));
-        return lblWebviewTitle.isDisplayed();
+
+        return isElementDisplayed(lblWebviewTitle);
     }
 }
