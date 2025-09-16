@@ -32,10 +32,9 @@ public class SignUpScreen extends BaseScreen {
     }
 
     public boolean isSignUpScreen() {
-        txtSignUpEmail.isDisplayed();
-        txtSignUpPassword.isDisplayed();
-        txtSignUpConfirmPassword.isDisplayed();
-        return true;
+        return isElementDisplayed(txtSignUpEmail) &&
+        isElementDisplayed(txtSignUpPassword) &&
+        isElementDisplayed(txtSignUpConfirmPassword);
     }
 
     public void enterSignUpEmail(String email) {

@@ -24,10 +24,10 @@ public class SwipeScreen extends BaseScreen {
     }
 
     public boolean isSwipeScreen() {
-        isElementDisplayed(lblSwipeTitle);
-        isElementDisplayed(lblSwipeDescription);
-        isElementDisplayed(crdSwipeScreen);
+        return isElementDisplayed(lblSwipeTitle) &&
+        isElementDisplayed(lblSwipeDescription) &&
+        isElementDisplayed(crdSwipeScreen) &&
         isElementDisplayed(crdTextContainer);
-        return true;
+
     }
 }

@@ -35,16 +35,15 @@ public class FormsScreen extends BaseScreen {
     }
 
     public boolean isFormScreen() {
-        isElementDisplayed(lblFormTitle);
-        isElementDisplayed(frmFormScreen);
-        isElementDisplayed(frmInputText);
-        isElementDisplayed(frmInputValue);
-        isElementDisplayed(frmSwitch);
-        isElementDisplayed(frmDropDown);
-        isElementDisplayed(frmActiveButton);
+        return isElementDisplayed(lblFormTitle) &&
+        isElementDisplayed(frmFormScreen) &&
+        isElementDisplayed(frmInputText) &&
+        isElementDisplayed(frmInputValue) &&
+        isElementDisplayed(frmSwitch) &&
+        isElementDisplayed(frmDropDown) &&
+        isElementDisplayed(frmActiveButton) &&
         isElementDisplayed(frmInactiveButton);
 
-        return true;
     }
 
 }

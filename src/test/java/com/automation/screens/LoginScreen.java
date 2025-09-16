@@ -41,14 +41,12 @@ public class LoginScreen extends BaseScreen {
     }
 
     public boolean isLoginScreen() {
-        isElementDisplayed(lblLoginTitle);
-        isElementDisplayed(btnLogin);
-        isElementDisplayed(btnSignUp);
-        isElementDisplayed(txtLoginEmail);
-        isElementDisplayed(txtLoginPassword);
+        return isElementDisplayed(lblLoginTitle) &&
+        isElementDisplayed(btnLogin) &&
+        isElementDisplayed(btnSignUp) &&
+        isElementDisplayed(txtLoginEmail) &&
+        isElementDisplayed(txtLoginPassword)&&
         isElementDisplayed(btnLoginSendForm);
-
-        return true;
     }
 
     public SignUpScreen tapOnSignUpButton() {
