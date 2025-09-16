@@ -34,7 +34,7 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Forms\")")
     WebElement btnFormsScreen;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Swipe\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Swipe\")")
     WebElement btnSwipeScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Drag\")")
@@ -46,12 +46,10 @@ public class HomeScreen extends BaseScreen {
     }
 
     public boolean isHomeScreen() {
-        isElementDisplayed(imgHomeScreen);
-        isElementDisplayed(lblHomeTitle);
-        isElementDisplayed(lblHomeDescription);
+        return isElementDisplayed(imgHomeScreen) &&
+        isElementDisplayed(lblHomeTitle) &&
+        isElementDisplayed(lblHomeDescription) &&
         isElementDisplayed(lblHomeSupportText);
-
-        return true;
     }
 
     public WebviewScreen tapOnWebviewButton() {
