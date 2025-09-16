@@ -7,11 +7,23 @@ import org.openqa.selenium.WebElement;
 
 public class HomeScreen extends BaseScreen {
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Home\")")
-    WebElement btnHome;
+    @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc=\"Home-screen\"]/android.view.ViewGroup/android.widget.ImageView[1]")
+    WebElement imgHomeScreen;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"WEBDRIVER\")")
     WebElement lblHomeTitle;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Demo app for the appium-boilerplate\")")
+    WebElement lblHomeDescription;
+
+    @AndroidFindBy(id = "00000000-0000-005f-ffff-ffff0000001f")
+    WebElement imgHomeAppleIcon;
+
+    @AndroidFindBy(id = "00000000-0000-005f-ffff-ffff00000020")
+    WebElement imgHomeAndroidIcon;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Support\")")
+    WebElement lblHomeSupportText;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Webview\")")
     WebElement btnWebviewScreen;
@@ -34,7 +46,12 @@ public class HomeScreen extends BaseScreen {
     }
 
     public boolean isHomeScreen() {
-        return lblHomeTitle.isDisplayed();
+        isElementDisplayed(imgHomeScreen);
+        isElementDisplayed(lblHomeTitle);
+        isElementDisplayed(lblHomeDescription);
+        isElementDisplayed(lblHomeSupportText);
+
+        return true;
     }
 
     public WebviewScreen tapOnWebviewButton() {

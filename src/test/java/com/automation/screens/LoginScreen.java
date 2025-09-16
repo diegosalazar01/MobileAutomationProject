@@ -18,6 +18,9 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Sign up\")")
     WebElement btnSignUp;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login\")")
+    WebElement btnLogin;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Email\")")
     WebElement txtLoginEmail;
 
@@ -25,7 +28,7 @@ public class LoginScreen extends BaseScreen {
     WebElement txtLoginPassword;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.ViewGroup\").instance(16)")
-    WebElement btnLogin;
+    WebElement btnLoginSendForm;
 
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"android:id/alertTitle\")")
     WebElement lblLoginAlertTitle;
@@ -38,7 +41,14 @@ public class LoginScreen extends BaseScreen {
     }
 
     public boolean isLoginScreen() {
-        return lblLoginTitle.isDisplayed();
+        isElementDisplayed(lblLoginTitle);
+        isElementDisplayed(btnLogin);
+        isElementDisplayed(btnSignUp);
+        isElementDisplayed(txtLoginEmail);
+        isElementDisplayed(txtLoginPassword);
+        isElementDisplayed(btnLoginSendForm);
+
+        return true;
     }
 
     public SignUpScreen tapOnSignUpButton() {
@@ -55,7 +65,7 @@ public class LoginScreen extends BaseScreen {
     }
 
     public void tapOnLoginButton() {
-        click(btnLogin);
+        click(btnLoginSendForm);
     }
 
     public void fillLoginForm() {

@@ -10,11 +10,24 @@ public class SwipeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Swipe horizontal\")")
     WebElement lblSwipeTitle;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Or swipe vertical to find what I'm hiding.\")")
+    WebElement lblSwipeDescription;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"card\").instance(0)")
+    WebElement crdSwipeScreen;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"slideTextContainer\").instance(0)")
+    WebElement crdTextContainer;
+
     public SwipeScreen(AppiumDriver driver) {
         super(driver);
     }
 
     public boolean isSwipeScreen() {
-        return lblSwipeTitle.isDisplayed();
+        isElementDisplayed(lblSwipeTitle);
+        isElementDisplayed(lblSwipeDescription);
+        isElementDisplayed(crdSwipeScreen);
+        isElementDisplayed(crdTextContainer);
+        return true;
     }
 }
